@@ -1,11 +1,9 @@
-const arr = [1,2,3,4,5,6]
-const num = arr[0]
+let arr = [1,2,3,4,5]
+const num = arr[arr.length-1]
 
-for(let i = 1; i<arr.length; i++){
-
-    arr[i - 1] = arr[i]
+for(let i = arr.length-2; i>=0; i--){
+    arr[i+1] = arr[i]
 }
-
-arr[arr.length-1] = num
+arr[0] = num
 
 console.log(arr)
