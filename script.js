@@ -1,9 +1,14 @@
 let arr = [1,2,3,4,5]
-const num = arr[arr.length-1]
+let k = 2
 
-for(let i = arr.length-2; i>=0; i--){
-    arr[i+1] = arr[i]
+
+for(let j =0; j<k; j++){
+    let temp = arr[0]
+    for(let i = 1; i<arr.length; i++){
+    arr[i-1] = arr[i]
 }
-arr[0] = num
+
+arr[arr.length-1] = temp
+}
 
 console.log(arr)
