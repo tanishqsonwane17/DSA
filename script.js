@@ -1,14 +1,12 @@
-let arr = [1,2,3,4,5]
-let k = 2
+let arr = [56,78,96,54,11,22,33,45,78,48]
+let num = 78
+let index = -1
 
-
-for(let j =0; j<k; j++){
-    let temp = arr[0]
-    for(let i = 1; i<arr.length; i++){
-    arr[i-1] = arr[i]
+for(let i = 0; i<arr.length; i++){
+    if(arr[i] == num ){
+        index = i
+        break
+    }
 }
 
-arr[arr.length-1] = temp
-}
-
-console.log(arr)
+console.log(index == -1?"number not found" : `number found at index ${index}`, )
