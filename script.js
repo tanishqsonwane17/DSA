@@ -1,11 +1,24 @@
-const arr = [1,2,3,4,5,6,7,8,9]
-let target = 5
-let index = -1
-for(let i = 0; i<arr.length; i++){
-    if(arr[i] == target){
-      index = i
-      break
-    }
+let arr1 = [1,3,5,7,9]
+let arr2 = [2,4,6,8,10]
+let newArr = new Array( arr1.length + arr2.length )
+let i = 0;
+let j = 0;
+let k = 0
+
+while(arr1[i] < arr1.length && arr2[j]<arr2.length){
+  if(arr1[i] < arr2[j]){
+    newArr[k++] = arr1[i++]
+  }
+  else{
+    newArr[k++] = arr2[j++]
+  }
 }
 
-console.log(index==-1?"value not found" : `value found at index ${index}`)
+while(i<arr1.length){
+  newArr[k++] = arr1[i++]
+}
+while(j<arr2.length){
+  newArr[k++] = arr2[j++]
+}
+
+console.log(newArr)
