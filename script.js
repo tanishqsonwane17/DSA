@@ -5,9 +5,7 @@ let i = 0;
 while(i<arr.length){
  
   if(arr[i] !=0 ){
-    let temp = arr[i]
-    arr[i] = arr[j]
-    arr[j] = temp
+    [arr[i], arr[j]] = [arr[j], arr[i]]
     j++
   }
 
