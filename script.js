@@ -1,21 +1,33 @@
-let arr = [1,0,2,3,0,4,5,0]
-let newArr = new Array(arr.length)
+let arr = [1,0,2,3,0,4,5]
+let countZero = 0
 
-let i = 0;
-let j = 0
-
-
-while(i<arr.length){
-  if(arr[i] != 0){
-    newArr[j] = arr[i]
-    j++
-    i++
-  }
-  else{
-    newArr[j] = arr[i]
-    newArr[j+1] = arr[i]
-    j+=2
-    i++
+for(let i = 0; i < arr.length; i++){
+  if(arr[i] == 0){
+    countZero++
   }
 }
-console.log(newArr)
+
+let i = arr.length - 1
+let j = arr.length - 1 + countZero
+
+while(i != j){
+
+  if(j < arr.length){
+    arr[j] = arr[i]
+  }
+
+  j--
+
+  if(arr[i] == 0){
+
+    if(j < arr.length){
+      arr[j] = arr[i]
+    }
+
+    j--
+  }
+
+  i--
+}
+
+console.log(arr)
