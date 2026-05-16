@@ -1,33 +1,22 @@
-let arr = [1,1,0,1,0,2,1,0,1,2,1,0]
+let arr = [2,5,8,13,16,22,25,29,33,34,69,70]
 let i = 0
-let j = 0
-let k = arr.length-1
-
-while(i<=k){
-  if(arr[i] == 0){
-    let temp = arr[i]
-    arr[i] = arr[j]
-    arr[j] = temp
-    j++
-    i++
+let j = arr.length-1
+let mid = 0
+let target = 33
+let ans = 0
+while(i<=j){
+  mid = Math.floor((i + j) / 2)
+  if(arr[mid] == target){
+    ans =  `you elem is presnet on ${mid} index`
+    break
   }
-  if(arr[i] == 2){
-    let temp = arr[i]
-    arr[i] = arr[k]
-    arr[k] = temp
-    k--
-
-    if(arr[i] == 0){
-      let temp = arr[i]
-      arr[i] = arr[j]
-      arr[j] = temp
-      i++
-      j++
-    }
-  }
-  else{
-    i++
+  if(arr[mid] < target){
+    i = mid+1
+    ans = `you elem is presnet on ${mid} index`
+  }else{
+    j = mid-1
+    ans  = `you elem is presnet on ${mid} index`
   }
 }
 
-console.log(arr)
+console.log(ans)
